@@ -1,9 +1,9 @@
 [project]
-name = "mltemplate"
+name = "marigold"
 version = "0.1.0"
-description = "An end-to-end starter template for machine learning projects."
+description = "Awesome marigold created by panks11"
 authors = [
-    { name = "JeremyWurbs" }
+    { name = "panks11" }
 ]
 dependencies = [
     "torch>=2.1.2",
@@ -28,14 +28,14 @@ readme = "README.md"
 requires-python = ">= 3.10"
 
 [project.scripts]
-hello = "mltemplate:hello"
-train = "mltemplate.scripts.train:entry"
-mltemplate_setup = "initial_setup:initial_mltemplate_setup"
+hello = "marigold:hello"
+train = "marigold.scripts.train:entry"
+marigold_setup = "initial_setup:initial_marigold_setup"
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
-discord_client = "python mltemplate.backend.discord.discord_client:run_discord_client"
+discord_client = "python marigold.backend.discord.discord_client:run_discord_client"
 
 [tool.rye]
 managed = true
@@ -54,71 +54,71 @@ dev-dependencies = [
 
 [tool.rye.scripts]
 lint = {chain = [
-    "echo:pylint:mltemplate",
-    "lint:pylint:mltemplate",
+    "echo:pylint:marigold",
+    "lint:pylint:marigold",
     "echo:pylint:tests",
     "lint:pylint:tests",
-    "echo:isort:check:mltemplate",
-    "lint:isort:check:mltemplate",
+    "echo:isort:check:marigold",
+    "lint:isort:check:marigold",
     "echo:isort:check:tests",
     "lint:isort:check:tests",
-    "echo:black:check:mltemplate",
-    "lint:black:check:mltemplate",
+    "echo:black:check:marigold",
+    "lint:black:check:marigold",
     "echo:black:check:tests",
     "lint:black:check:tests"]}
-"echo:pylint:mltemplate" = "echo 'pylint mltemplate/'"
-"lint:pylint:mltemplate" = "pylint mltemplate/"
+"echo:pylint:marigold" = "echo 'pylint marigold/'"
+"lint:pylint:marigold" = "pylint marigold/"
 "echo:pylint:tests" = "echo 'pylint --disable=protected-access tests/'"
 "lint:pylint:tests" = "pylint --disable=protected-access tests/"
-"echo:isort:check:mltemplate" = "echo '\nisort -l 120 --check mltemplate/'"
-"lint:isort:check:mltemplate" = "isort -l 120 --check mltemplate/"
+"echo:isort:check:marigold" = "echo '\nisort -l 120 --check marigold/'"
+"lint:isort:check:marigold" = "isort -l 120 --check marigold/"
 "echo:isort:check:tests" = "echo '\nisort -l 120 --check tests/'"
 "lint:isort:check:tests" = "isort -l 120 --check tests/"
-"echo:black:check:mltemplate" = "echo '\nblack -l 120 --check mltemplate/'"
-"lint:black:check:mltemplate" = "black -l 120 --check mltemplate/"
+"echo:black:check:marigold" = "echo '\nblack -l 120 --check marigold/'"
+"lint:black:check:marigold" = "black -l 120 --check marigold/"
 "echo:black:check:tests" = "echo '\nblack -l 120 --check tests/'"
 "lint:black:check:tests" = "black -l 120 --check tests/"
 format = {chain = [
-    "echo:isort:mltemplate",
-    "format:isort:mltemplate",
-    "echo:black:format:mltemplate",
-    "format:black:format:mltemplate",
+    "echo:isort:marigold",
+    "format:isort:marigold",
+    "echo:black:format:marigold",
+    "format:black:format:marigold",
     "echo:isort:tests",
     "format:isort:tests",
     "echo:black:format:tests",
     "format:black:format:tests"] }
-"echo:isort:mltemplate" = "echo '\nisort -l 120 mltemplate/'"
-"format:isort:mltemplate" = "isort -l 120 mltemplate/"
-"echo:black:format:mltemplate" = "echo '\nblack -l 120 mltemplate/'"
-"format:black:format:mltemplate" = "black -l 120 mltemplate/"
+"echo:isort:marigold" = "echo '\nisort -l 120 marigold/'"
+"format:isort:marigold" = "isort -l 120 marigold/"
+"echo:black:format:marigold" = "echo '\nblack -l 120 marigold/'"
+"format:black:format:marigold" = "black -l 120 marigold/"
 "echo:isort:tests" = "echo '\nisort -l 120 tests/'"
 "format:isort:tests" = "isort -l 120 tests/"
 "echo:black:format:tests" = "echo '\nblack -l 120 tests/'"
 "format:black:format:tests" = "black -l 120 tests/"
 test = {chain = ["echo:test", "test:pytest"]}
-"echo:test" = "echo 'pytest -rs --cov=mltemplate --maxfail=1 --cov-report term-missing -W ignore::DeprecationWarning tests/'"
-"test:pytest" = "pytest -rs --cov=mltemplate --maxfail=1 --cov-report term-missing -W ignore::DeprecationWarning tests/"
+"echo:test" = "echo 'pytest -rs --cov=marigold --maxfail=1 --cov-report term-missing -W ignore::DeprecationWarning tests/'"
+"test:pytest" = "pytest -rs --cov=marigold --maxfail=1 --cov-report term-missing -W ignore::DeprecationWarning tests/"
 docs = {chain = ["echo:compile-docs", "docs:compile-docs", "echo:build-html-docs", "docs:build-html-docs", "echo:build-pdf-docs", "docs:build-pdf-docs"]}
-"echo:compile-docs" = "echo 'sphinx-apidoc --force -o docs mltemplate/'"
-"docs:compile-docs" = "sphinx-apidoc --force -o docs mltemplate/"
+"echo:compile-docs" = "echo 'sphinx-apidoc --force -o docs marigold/'"
+"docs:compile-docs" = "sphinx-apidoc --force -o docs marigold/"
 "echo:build-html-docs" = "echo 'make -C docs/ clean html'"
 "docs:build-html-docs" = "make -C docs/ clean html"
 "echo:build-pdf-docs" = "echo 'make -C docs/ simplepdf'"
 "docs:build-pdf-docs" = "make -C docs/ simplepdf"
-graph-dependencies = {chain = ["echo:dependency-graph", "dependency-graph:mltemplate"]}
-"echo:dependency-graph" = "echo 'pyreverse -o png --colorized --max-color-depth 3 --no-standalone mltemplate'"
-"dependency-graph:mltemplate" = "pyreverse -o png --colorized --max-color-depth 3 --no-standalone mltemplate"
-mlflow_server = "mlflow server --backend-store-uri ${HOME}/mltemplate/mlflow --port 8080"
-gateway_server = "python -m gunicorn -w 1 -b localhost:8081 -k uvicorn.workers.UvicornWorker \"mltemplate.backend.gateway.gateway_server:app()\""
-training_server = "python -m gunicorn -w 4 -b localhost:8082 -k uvicorn.workers.UvicornWorker \"mltemplate.backend.training.training_server:app()\""
-deployment_server = "python -m gunicorn -w 1 -b localhost:8083 -k uvicorn.workers.UvicornWorker \"mltemplate.backend.deployment.deployment_server:app()\""
-discord_client = "python mltemplate/backend/discord/discord_client.py"
+graph-dependencies = {chain = ["echo:dependency-graph", "dependency-graph:marigold"]}
+"echo:dependency-graph" = "echo 'pyreverse -o png --colorized --max-color-depth 3 --no-standalone marigold'"
+"dependency-graph:marigold" = "pyreverse -o png --colorized --max-color-depth 3 --no-standalone marigold"
+mlflow_server = "mlflow server --backend-store-uri ${HOME}/marigold/mlflow --port 8080"
+gateway_server = "python -m gunicorn -w 1 -b localhost:8081 -k uvicorn.workers.UvicornWorker \"marigold.backend.gateway.gateway_server:app()\""
+training_server = "python -m gunicorn -w 4 -b localhost:8082 -k uvicorn.workers.UvicornWorker \"marigold.backend.training.training_server:app()\""
+deployment_server = "python -m gunicorn -w 1 -b localhost:8083 -k uvicorn.workers.UvicornWorker \"marigold.backend.deployment.deployment_server:app()\""
+discord_client = "python marigold/backend/discord/discord_client.py"
 
 [tool.hatch.metadata]
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
-packages = ["mltemplate"]
+packages = ["marigold"]
 
 [tool.isort]
 profile = "black"

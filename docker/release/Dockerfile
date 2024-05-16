@@ -4,7 +4,7 @@
 #FROM ubuntu:22.04 as base
 
 # Else, if building for GPU, use the Nvidia/CUDA image
-FROM nvidia/cuda:mltemplate as base
+FROM nvidia/cuda:marigold as base
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG USER=docker
@@ -47,8 +47,8 @@ RUN rye sync --no-dev
 
 FROM base as release
 
-# Install Mltemplate
-COPY mltemplate ./mltemplate
+# Install Marigold
+COPY marigold ./marigold
 RUN rye build
 RUN rye install . --python 3.10
 RUN rye run create_project_directories

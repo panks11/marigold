@@ -1,7 +1,7 @@
-"""Unit test methods for the mltemplate.core.registry.Registry class."""
+"""Unit test methods for the marigold.core.registry.Registry class."""
 import pytest
 
-from mltemplate.modules import Registry
+from marigold.modules import Registry
 
 
 def test_registry():

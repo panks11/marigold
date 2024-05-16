@@ -1,0 +1,2 @@
+_target_: marigold.models.cnn.CNN
+name: CNN

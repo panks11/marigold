@@ -1,10 +1,10 @@
-"""Unit test methods for the mltemplate.core.config.Config class."""
+"""Unit test methods for the marigold.core.config.Config class."""
 import os
 
 import pytest
 
-from mltemplate import Config
-from mltemplate_setup import initial_mltemplate_setup
+from marigold import Config
+from marigold_setup import initial_marigold_setup
 
 
 def test_functionality():
@@ -15,7 +15,7 @@ def test_functionality():
 
 
 def test_configuration():
-    initial_mltemplate_setup()
+    initial_marigold_setup()
     config = Config()
     dirs = (
         config["DIR_PATHS"]["ROOT"],

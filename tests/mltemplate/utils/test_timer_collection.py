@@ -1,9 +1,9 @@
-"""Unit test methods for mltemplate.utils.timer_collection utility module."""
+"""Unit test methods for marigold.utils.timer_collection utility module."""
 import time
 
 import pytest
 
-from mltemplate.utils import TimerCollection
+from marigold.utils import TimerCollection
 
 
 def test_timer_collection():

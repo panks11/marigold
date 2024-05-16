@@ -1,5 +1,5 @@
-"""Unit test methods for mltemplate.utils.checks utility module."""
-from mltemplate.utils import ifnone
+"""Unit test methods for marigold.utils.checks utility module."""
+from marigold.utils import ifnone
 
 
 def test_ifnone():

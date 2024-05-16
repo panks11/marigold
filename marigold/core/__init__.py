@@ -1,0 +1,1 @@
+"""Core Marigold module."""
